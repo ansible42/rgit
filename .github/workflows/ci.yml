@@ -32,7 +32,6 @@ jobs:
           name: rgit
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - run: nix build -L '.#${{ matrix.attr }}'
-      - run: ls ./result
       - name: Archive ${{ matrix.os }} artifacts
         uses: actions/upload-artifact@v4
         with:
